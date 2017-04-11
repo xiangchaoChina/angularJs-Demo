@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>定时函数</title>
+</head>
+<body>
+<!--ng-init="name='张三丰'"-->
+<div ng-controller="ctrl1">
+    {{count}}
+</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myapp",[])
+            .controller("ctrl1",function ($scope,$interval) {
+                $scope.name="张君宝";
+                $scope.count=0;
+                $interval(function () {
+                    $scope.count++;
+                },1000);
+            })
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Bind</title>
+</head>
+<body>
+
+  <div ng-controller="ctrl1">
+        用户名:{{username}}<br>
+        密码:{{password}}<br>
+        邮箱:{{email}}<br>
+      <h2>ng-bind</h2>
+      <h5>属性使用</h5>
+      <p ng-bind="details"></p>
+      <h5>类使用</h5>
+      <p class="ng-bind:details"></p>
+      <h2>ng-bind-template</h2>
+      <p ng-bind-template="尘名:{{username}}.得道密码:{{password}}.联系我:{{email}}.生平简介:{{details}}"></p>
+      <h2>ng-bind-html</h2>
+      <div ng-bind-html="label">
+      </div>
+  </div>
+
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-sanitize.js"></script>
+<script src="js/bind.js"></script>
+</html>

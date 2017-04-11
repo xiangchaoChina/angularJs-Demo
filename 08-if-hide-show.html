@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-if="true">
+         张三丰:...................
+    </div>
+    <div ng-hide="true">
+        张君宝:...................
+    </div>
+    <div ng-show="false">
+        张君宝:...................
+    </div>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myapp",[])
+            .controller("ctrl1",function ($scope) {
+                $scope.expr=false;
+            })
+</script>
+</html>
