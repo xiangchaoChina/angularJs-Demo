@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .odd{
+        color: red;
+    }
+    .even{
+        color:green;
+    }
+</style>
+<body ng-controller="ctrl1">
+<h1>给数组赋值</h1>
+<input ng-model="item"><br>
+<input type="button" value="add" ng-click="add()"><br>
+{{users}}
+<h1></h1>
+<h1>给数组赋值</h1>
+<ul>
+    <!--ng-class-even="even" ng-class-odd="odd"-->
+    <li ng-repeat="arrItem in users track by $index"
+    ng-class="{ {{even}}:'even',{{odd}}:'odd' }"
+
+    > {{arrItem}}</li>
+</ul>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myapp",[])
+            .controller("ctrl1",function ($scope) {
+                $scope.even="even";
+                $scope.odd="odd";
+                $scope.item=""
+                $scope.users=[];
+                $scope.add=function () {
+                    $scope.users.push($scope.item);
+                }
+            })
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-controller="ctrl1">
+    <textarea maxlength="1000" cols="50" rows="10" ng-model="content" ng-change="change()">
+
+    </textarea>
+    <p>已输入{{inNum}}字,还可以输入{{sxNum}}字</p>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myapp",[])
+            .controller("ctrl1",function ($scope) {
+                    $scope.content="";//用户输入的值
+                    $scope.inNum = 0;//已输入
+                    $scope.sxNum = 1000;//剩下
+                    $scope.change=function () {
+                        console.log("--")
+                        $scope.inNum = $scope.content.length;
+                        $scope.sxNum = 1000 - $scope.inNum;
+                    }
+            })
+</script>
+</html>

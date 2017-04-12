@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form ng-controller="ctrl1" >
+   <label>用户名:</label><input ng-disabled="disabled" ng-readonly="readonly"><br>
+   <label>密码:</label><input   ng-disabled="disabled" ng-readonly="readonly"><br>
+   <label>邮箱:</label><input   ng-disabled="disabled" ng-readonly="readonly"><br>
+   <label>性别:</label><input   ng-disabled="disabled" type="radio" name="sex">男
+                       <input   ng-disabled="disabled" type="radio" name="sex">女
+    <br>
+   <label>爱好:</label><input   ng-disabled="disabled" type="checkbox" ng-checked="check">游泳
+                       <input   ng-disabled="disabled" type="checkbox" ng-checked="check">逛街
+                       <input   ng-disabled="disabled" type="checkbox" ng-checked="check">睡觉
+     <input   ng-disabled="disabled" type="checkbox"  ng-model="check">全选
+   <hr>
+   <input type="checkbox" ng-model="disabled">已阅读协议<br>
+    <input type="checkbox" ng-model="readonly">是否只读
+</form>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myapp",[])
+            .controller("ctrl1",function ($scope) {
+                $scope.disabled=false;//禁用:true-禁用;false-不禁用
+                $scope.readonly=false;//只读:true-只读;false-可以读
+                $scope.check=false;//是否选中:true-选中;false-不选中
+            })
+</script>
+</html>
